@@ -1,0 +1,26 @@
+@mixin regular-13-18 {
+  @include typography(13px, 400, 18px);
+}
+@mixin regular-14-20 {
+  @include typography(14px, 400, 20px);
+}
+@mixin regular-16-24 {
+  @include typography(16px, 400, 24px);
+}
+@mixin regular-18-24 {
+  @include typography(18px, 400, 24px);
+}
+
+@mixin medium-16-24 {
+  @include typography(16px, 500, 24px);
+}
+
+@mixin heading-h3 {
+  @include typography(18px, 400, 24px);
+}
+@mixin heading-h2 {
+  @include typography(18px, 500, 24px);
+}
+@mixin heading-h1 {
+  @include typography(26px, 500, 32px);
+}

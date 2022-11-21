@@ -1,0 +1,26 @@
+@import "colors";
+
+:export {
+  // Main colors
+  primary: $primary-color;
+  secondary: $secondary-color;
+  danger: $danger-color;
+  success: $success-color;
+
+  // Font colors
+  grayFont: $gray-font-color;
+  blackFont: $black-font-color;
+
+  // White colors
+  white: $white-color;
+  light: $light-color;
+
+  // Blue colors
+  blueLight: $blue-light-color;
+  blueGray: $blue-gray-color;
+
+  // Gray colors
+  grayLight: $gray-light-color;
+  gray: $gray-color;
+  grayDark: $gray-dark-color;
+}

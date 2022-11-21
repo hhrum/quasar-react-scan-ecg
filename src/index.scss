@@ -1,0 +1,84 @@
+// @font-face {
+//   font-family: "Golos";
+//   font-style: normal;
+//   font-weight: 400;
+
+//   src: local("Golos"), url("./assets/fonts/Golos-Text_Regular.ttf") format("truetype");
+// }
+
+// @font-face {
+//   font-family: "Golos";
+//   font-style: normal;
+//   font-weight: 500;
+
+//   src: local("Golos"), url("./assets/fonts/Golos-Text_Medium.ttf") format("truetype");
+// }
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  // font-family: "Golos", sans-serif;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  background-color: $white-color;
+
+  &.overflow {
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+  }
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  border: 0;
+}
+button {
+  cursor: pointer;
+  background-color: inherit;
+}
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+a:hover {
+  text-decoration: none;
+}
+img {
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}

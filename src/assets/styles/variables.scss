@@ -1,0 +1,21 @@
+@import "colors/colors";
+
+// Z-Index
+$z-index-input: 10;
+$z-index-select: auto;
+$z-index-toolbox: 30;
+$z-index-modal: 40;
+
+// Animation variables
+$animation-default-time: 0.2s;
+$animation-long-time: 0.4s;
+
+// Width/Height variables
+$height-header: 64px;
+$height-navigation-default: 64px;
+$height-navigation-big: 80px;
+
+// Border-radius variables
+$border-radius-small: 4px;
+$border-radius-medium: 8px;
+$border-radius-big: 12px;

@@ -1,0 +1,46 @@
+@mixin flexible($ai: flex-start, $jc: flex-start, $fd: row, $gap: 0) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-direction: $fd;
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}
+
+@mixin square($size, $radius: 0) {
+  min-width: $size;
+  width: $size;
+  max-width: $size;
+  min-height: $size;
+  height: $size;
+  max-height: $size;
+
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+
+@mixin position($pos, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin invisible {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0;
+}
+
+@mixin typography($fs: 16px, $fw: 400, $lh: 16px) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+}

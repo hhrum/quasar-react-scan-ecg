@@ -1,0 +1,13 @@
+{
+  "trailingComma": "all",
+  "printWidth": 100,
+  "semi": false,
+
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": true,
+
+  "bracketSpacing": true,
+  "proseWrap": "always",
+  "singleAttributePerLine": true
+}
