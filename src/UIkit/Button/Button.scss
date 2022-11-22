@@ -10,14 +10,14 @@
   @include flexible(center, center, $gap: 8px);
 
   &--primary {
-    &__text {
+    .button__text {
       color: $white-color;
     }
     background-color: $primary-color;
   }
 
   &--secondary {
-    &__text {
+    .button__text {
       color: $primary-color;
     }
     background-color: $white-color;
