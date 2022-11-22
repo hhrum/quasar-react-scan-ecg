@@ -1,0 +1,31 @@
+.wrapper-button {
+  padding: 5px 10px;
+}
+
+.button {
+  width: 100%;
+  min-height: 48px;
+  height: 48px;
+  border-radius: 10px;
+  @include flexible(center, center, $gap: 8px);
+
+  &--primary {
+    .button__text {
+      color: $white-color;
+    }
+    background-color: $primary-button-color;
+  }
+
+  &--secondary {
+    .button__text {
+      color: $primary-button-color;
+    }
+    background-color: white;
+    border: 2px solid $primary-button-color;
+  }
+
+  &--disabled {
+    opacity: .6;
+    cursor: default;
+  }
+}

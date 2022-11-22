@@ -1,7 +1,8 @@
-import { ReactComponent as Moon } from './moon.svg';
-import { ReactComponent as Pill } from './pill.svg';
+import { ReactComponent as Play } from '@Assets/images/icons/play.svg'
+
+import { ReactComponent as Photo } from '@Assets/images/icons/photo.svg'
 
 export default {
-  Moon,
-  Pill,
-};
+  Play,
+  Photo,
+}
