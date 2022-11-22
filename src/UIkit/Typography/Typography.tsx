@@ -1,8 +1,6 @@
 import classnames from 'classnames'
-
-import TypographyProps from './Typography.types'
-
 import './Typography.scss'
+import TypographyProps from './Typography.types'
 
 function Typography({ variant, color, className, children }: TypographyProps) {
   const typographyClass = classnames('typography', `typography--${variant}`, className)

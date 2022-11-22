@@ -1,5 +1,6 @@
 {
   "trailingComma": "all",
+  "tabWidth": 2,
   "printWidth": 100,
   "semi": false,
 
@@ -9,5 +10,6 @@
 
   "bracketSpacing": true,
   "proseWrap": "always",
-  "singleAttributePerLine": true
+  "singleAttributePerLine": true,
+  "endOfLine": "auto"
 }

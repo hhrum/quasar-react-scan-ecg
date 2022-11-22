@@ -1,6 +1,5 @@
-import Typography from '@UIkit/Typography'
 import colors from '@Assets/styles/colors'
-
+import Typography from '@UIkit/Typography'
 import './DevPage.scss'
 
 const DevPage = () => {
