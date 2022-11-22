@@ -16,10 +16,10 @@ const DevPage = () => {
         DevPage
       </Typography>
       <Button type='primary'>Получить код</Button>
-      <Button type='primary' disabled={true}>Получить код</Button>
+      <Button type='primary' disabled>Получить код</Button>
       <Button type='secondary'>Получить код</Button>
       <Button type='primary' icon={icons.Play}>Играть</Button>
-      <Button type='primary' icon={icons.Play} disabled={true}>Играть</Button>
+      <Button type='primary' icon={icons.Play} disabled>Играть</Button>
       <Button type='primary' icon={icons.Photo}>Добавить фото</Button>
     </>
   )
