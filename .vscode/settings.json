@@ -1,5 +1,9 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.stylelintIntegration": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+
+  // Использование локальных правил для StyleLint
+  "stylelint.useLocal": true,
+  "stylelint.autoFixOnSave": true
 }

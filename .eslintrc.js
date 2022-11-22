@@ -5,9 +5,10 @@ module.exports = {
     node: true,
     browser: true,
     es2021: true,
-  },
+  },  
   extends: [
     'eslint:recommended',
+    'eslint-config-prettier',
     'plugin:react/recommended',
     'plugin:import/recommended',
     'plugin:import/errors',
@@ -21,7 +22,13 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'import'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'import',
+    'prettier',
+    'eslint-plugin-prettier',
+  ],
   settings: {
     'import/resolver': {
       alias: {
@@ -46,6 +53,7 @@ module.exports = {
         amd: true,
       },
     ],
+    "prettier/prettier": [2],
     'react/jsx-uses-react': [0],
     'react/react-in-jsx-scope': [0],
 
