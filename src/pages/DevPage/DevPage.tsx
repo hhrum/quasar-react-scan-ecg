@@ -1,11 +1,17 @@
+import Typography from '@UIkit/Typography'
+import colors from '@Assets/styles/colors'
+
+import './DevPage.scss'
+
 const DevPage = () => {
   return (
-    <div
+    <Typography
       className='test'
-      key={2}
+      variant='heading-h1'
+      color={colors.blackFont}
     >
       DevPage
-    </div>
+    </Typography>
   )
 }
 

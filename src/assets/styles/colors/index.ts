@@ -1,4 +1,4 @@
-import colors from './export.scss';
+import colors from './export.scss'
 
 export default {
   // Main colors
@@ -13,4 +13,4 @@ export default {
   // Blue colors
 
   // Gray colors
-};
+}

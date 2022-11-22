@@ -1,24 +1,24 @@
-// @font-face {
-//   font-family: "Golos";
-//   font-style: normal;
-//   font-weight: 400;
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
 
-//   src: local("Golos"), url("./assets/fonts/Golos-Text_Regular.ttf") format("truetype");
-// }
+  src: local("Inter"), url("./assets/fonts/InterRegular.ttf") format("truetype");
+}
 
-// @font-face {
-//   font-family: "Golos";
-//   font-style: normal;
-//   font-weight: 500;
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
 
-//   src: local("Golos"), url("./assets/fonts/Golos-Text_Medium.ttf") format("truetype");
-// }
+  src: local("Inter"), url("./assets/fonts/InterSemiBold.ttf") format("truetype");
+}
 
 * {
   padding: 0;
   margin: 0;
   border: 0;
-  // font-family: "Golos", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 *,
 *:before,
