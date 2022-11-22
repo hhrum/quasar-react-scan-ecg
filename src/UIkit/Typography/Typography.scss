@@ -4,6 +4,7 @@
   &--text-t2 {
     @include text-t2;
   }
+
   &--text-t2-bold {
     @include text-t2-bold;
   }
@@ -11,6 +12,7 @@
   &--text-t1 {
     @include text-t1;
   }
+
   &--text-t1-bold {
     @include text-t1-bold;
   }
@@ -18,9 +20,11 @@
   &--heading-h3 {
     @include heading-h3;
   }
+
   &--heading-h2 {
     @include heading-h2;
   }
+
   &--heading-h1 {
     @include heading-h1;
   }

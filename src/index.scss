@@ -1,31 +1,31 @@
 @font-face {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 400;
-
-  src: local("Inter"), url("./assets/fonts/InterRegular.ttf") format("truetype");
+  font-family: Inter;
+  font-style: normal;
+  src: local('Inter'), url('./assets/fonts/InterRegular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "Inter";
-  font-style: normal;
   font-weight: 600;
-
-  src: local("Inter"), url("./assets/fonts/InterSemiBold.ttf") format("truetype");
+  font-family: Inter;
+  font-style: normal;
+  src: local('Inter'), url('./assets/fonts/InterSemiBold.ttf') format('truetype');
 }
 
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif;
   border: 0;
-  font-family: "Inter", sans-serif;
 }
+
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
+
 body {
   background-color: $white-color;
 
@@ -35,40 +35,48 @@ body {
     overflow: hidden;
   }
 }
+
 :focus,
 :active {
   outline: none;
 }
+
+a,
+a:visited {
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  text-decoration: none;
+}
+
 a:focus,
 a:active {
   outline: none;
 }
+
 input,
 button,
 textarea {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
   color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
   border: 0;
 }
+
 button {
-  cursor: pointer;
   background-color: inherit;
+  cursor: pointer;
 }
-a,
-a:visited {
-  color: inherit;
-  text-decoration: none;
-  font-family: inherit;
-  font-size: inherit;
-}
+
 a:hover {
   text-decoration: none;
 }
+
 img {
   display: block;
 }
+
 h1,
 h2,
 h3,
@@ -79,6 +87,6 @@ h6 {
 }
 
 p {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }

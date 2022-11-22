@@ -5,5 +5,21 @@
 
   // Использование локальных правил для StyleLint
   "stylelint.useLocal": true,
-  "stylelint.autoFixOnSave": true
+  "stylelint.autoFixOnSave": true,
+
+  "scss.validate": false,
+  "css.validate": false,
+  "less.validate": false,
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.stylelint": true
+  },
+
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  }
 }

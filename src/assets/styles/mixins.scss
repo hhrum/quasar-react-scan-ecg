@@ -1,8 +1,8 @@
 @mixin flexible($ai: flex-start, $jc: flex-start, $fd: row, $gap: 0) {
   display: flex;
+  flex-direction: $fd;
   align-items: $ai;
   justify-content: $jc;
-  flex-direction: $fd;
 
   @if $gap != 0 {
     gap: $gap;
@@ -10,11 +10,11 @@
 }
 
 @mixin square($size, $radius: 0) {
-  min-width: $size;
   width: $size;
+  min-width: $size;
   max-width: $size;
-  min-height: $size;
   height: $size;
+  min-height: $size;
   max-height: $size;
 
   @if $radius != 0 {
@@ -33,14 +33,14 @@
 @mixin invisible {
   position: absolute;
   z-index: -1;
-  opacity: 0;
   display: block;
   width: 0;
   height: 0;
+  opacity: 0;
 }
 
 @mixin typography($fs: 16px, $fw: 400, $lh: 16px) {
-  font-size: $fs;
   font-weight: $fw;
+  font-size: $fs;
   line-height: $lh;
 }

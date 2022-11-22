@@ -6,10 +6,24 @@
 
   "singleQuote": true,
   "quoteProps": "as-needed",
-  "jsxSingleQuote": true,
+  "jsxSingleQuote": false,
 
   "bracketSpacing": true,
   "proseWrap": "always",
   "singleAttributePerLine": true,
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+
+  "importOrder": [
+    "^@Components/(.*)$",
+    "^@UIkit/(.*)$",
+    "^@Assets/(.*)$",
+    "^@Hooks/(.*)$",
+    "^@Utils/(.*)$",
+    "^@Constants/(.*)$",
+    "^@Layouts/(.*)$",
+    "^@Pages/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
 }

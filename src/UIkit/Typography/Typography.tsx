@@ -1,4 +1,5 @@
 import classnames from 'classnames'
+
 import './Typography.scss'
 import TypographyProps from './Typography.types'
 
