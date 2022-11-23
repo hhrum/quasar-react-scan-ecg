@@ -8,7 +8,7 @@ interface ButtonProps {
   icon?: any
   disabled?: boolean
   onClick?: MouseEventHandler
-  children?: string
+  children?: JSX.Element | JSX.Element[] | string
   to?: string
 }
 

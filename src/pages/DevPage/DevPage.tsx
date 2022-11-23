@@ -4,11 +4,13 @@ import Typography from '@UIkit/Typography'
 import icons from '@Assets/images/icons'
 import colors from '@Assets/styles/colors'
 
+import PageLayout from '@Layouts/PageLayout'
+
 import './DevPage.scss'
 
 function DevPage() {
   return (
-    <>
+    <PageLayout>
       <Typography
         className="test"
         variant="heading-h1"
@@ -43,7 +45,7 @@ function DevPage() {
       >
         Добавить фото
       </Button>
-    </>
+    </PageLayout>
   )
 }
 
