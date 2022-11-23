@@ -21,7 +21,7 @@
   }
 
   &--disabled {
-    opacity: 0.6;
+    background-color: $secondary-button-color;
     cursor: default;
   }
 }

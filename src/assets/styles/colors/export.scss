@@ -1,16 +1,36 @@
 @import 'colors';
 
 :export {
-  // Main colors
+  // Primary colors
+  primary: $primary-color;
 
+  // Primary font colors
+  primaryText01: $primary-text-01-color;
+
+  //--------------------------------------
+  // Secondary colors
+  secondaryButton: $secondary-button-color;
+
+  secondarySuccess: $secondary-success-color;
+  secondaryError: $secondary-error-color;
+
+  // Secondary light colors
+  secondaryLight01: $secondary-light-01-color;
+  secondaryLight02: $secondary-light-02-color;
+
+  // Secondary dark colors
+  secondaryDark01: $secondary-dark-01-color;
+  secondaryDark02: $secondary-dark-02-color;
+  secondaryDark03: $secondary-dark-03-color;
+
+  //--------------------------------------
   // Font colors
-  blackFont: $black-font-color;
-  blackLightFont: $black-font-color;
+  text03: $text-03-color;
 
   // White colors
   white: $white-color;
 
-  // Blue colors
-
-  // Gray colors
+  // Grey colors
+  grey200: $grey-200-color;
+  grey700: $grey-700-color;
 }
