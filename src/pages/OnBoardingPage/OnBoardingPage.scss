@@ -1,0 +1,9 @@
+.onboarding {
+  &__content {
+    @include flexible(inherit, flex-end, column);
+  }
+
+  &__swiper-wrap {
+    margin-bottom: 50px;
+  }
+}

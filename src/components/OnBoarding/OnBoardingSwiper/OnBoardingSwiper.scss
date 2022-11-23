@@ -1,0 +1,20 @@
+.swiper {
+  padding-bottom: 20px;
+
+  &-pagination {
+    bottom: 0 !important;
+
+    &-bullet {
+      width: 8px !important;
+      height: 8px !important;
+
+      opacity: 1 !important;
+      background-color: $secondary-light-02-color !important;
+      transition: all $animation-default-time linear;
+
+      &-active {
+        background-color: $secondary-dark-03-color !important;
+      }
+    }
+  }
+}

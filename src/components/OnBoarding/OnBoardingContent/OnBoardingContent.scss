@@ -1,0 +1,15 @@
+.onboarding-content {
+  &__img {
+    @include flexible($jc: center, $fd: inherit);
+    margin-bottom: 24px;
+  }
+
+  &__text-info {
+    gap: 12px;
+  }
+
+  &__text,
+  &__title {
+    text-align: center;
+  }
+}

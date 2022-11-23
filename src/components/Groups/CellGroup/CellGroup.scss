@@ -1,0 +1,22 @@
+.cell-group {
+  align-items: stretch;
+
+  &__separator {
+    width: 100%;
+    height: 1px;
+    padding: 0 16px;
+
+    @include flexible(stretch, $fd: column);
+
+    &:after {
+      content: "";
+      background-color: $bg-gray-light-color;
+      width: 100%;
+      height: 100%;
+    }
+
+    &--no-padding {
+      padding: 0;
+    }
+  }
+}
