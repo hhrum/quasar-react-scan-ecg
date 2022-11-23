@@ -12,7 +12,7 @@ function DevPage() {
       <Typography
         className="test"
         variant="heading-h1"
-        color={colors.blackFont}
+        color={colors.primaryText01}
       >
         DevPage
       </Typography>
