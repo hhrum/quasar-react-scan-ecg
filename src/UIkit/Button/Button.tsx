@@ -1,9 +1,9 @@
 import classnames from 'classnames'
 
-import ButtonProps from '@UIkit/Button/Button.types'
 import Typography from '@UIkit/Typography'
 
 import './Button.scss'
+import ButtonProps from './Button.types'
 
 function Button({ className, type, icon, disabled, onClick, children }: ButtonProps) {
   const buttonClassName = classnames(
@@ -14,7 +14,9 @@ function Button({ className, type, icon, disabled, onClick, children }: ButtonPr
     },
     className,
   )
+
   const IconComponent = icon
+
   return (
     <div className="wrapper-button">
       <button
@@ -24,6 +26,7 @@ function Button({ className, type, icon, disabled, onClick, children }: ButtonPr
         onClick={onClick}
       >
         {icon && <IconComponent />}
+
         <Typography
           className="button__text"
           variant="text-t1-bold"
@@ -41,7 +44,7 @@ Button.defaultProps = {
   icon: null,
   disabled: false,
   onClick: () => null,
-  children: '',
+  children: null,
 }
 
 export default Button
