@@ -18,23 +18,21 @@ function Button({ className, type, icon, disabled, onClick, children }: ButtonPr
   const IconComponent = icon
 
   return (
-    <div className="wrapper-button">
-      <button
-        type="button"
-        className={buttonClassName}
-        disabled={disabled}
-        onClick={onClick}
-      >
-        {icon && <IconComponent />}
+    <button
+      type="button"
+      className={buttonClassName}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {icon && <IconComponent />}
 
-        <Typography
-          className="button__text"
-          variant="text-t1-bold"
-        >
-          {children}
-        </Typography>
-      </button>
-    </div>
+      <Typography
+        className="button__text"
+        variant="text-t1-bold"
+      >
+        {children}
+      </Typography>
+    </button>
   )
 }
 
