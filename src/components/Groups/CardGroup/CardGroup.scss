@@ -1,0 +1,12 @@
+.card-group {
+  &__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    & .card--big {
+      margin-bottom: 16px;
+    }
+  }
+}

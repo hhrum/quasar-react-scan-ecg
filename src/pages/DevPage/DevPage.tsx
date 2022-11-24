@@ -1,4 +1,7 @@
+import CardGroup from '@Components/Groups/CardGroup'
+
 import Button from '@UIkit/Button'
+import Card from '@UIkit/Card'
 import Typography from '@UIkit/Typography'
 
 import icons from '@Assets/images/icons'
@@ -45,6 +48,24 @@ function DevPage() {
       >
         Добавить фото
       </Button>
+
+      <CardGroup header="Мои ЭКГ-плёнки">
+        <Card
+          isBigCard
+          name="ЭКГ"
+          textDate="12.10.2022"
+        />
+        <Card
+          isBigCard
+          name="ЭКГ"
+          textDate="12.10.2022"
+        />
+        <Card
+          isBigCard
+          name="ЭКГ"
+          textDate="12.10.2022"
+        />
+      </CardGroup>
     </PageLayout>
   )
 }
