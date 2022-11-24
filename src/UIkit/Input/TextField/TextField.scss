@@ -1,0 +1,29 @@
+.input {
+  margin-top: 10px;
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 66px;
+  height: 66px;
+  border-top: .5px solid $secondary-light-02-color;
+  border-bottom: .5px solid $secondary-light-02-color;
+  @include flexible(flex-end, flex-start);
+
+  &__text-field {
+    width: inherit;
+    margin-left: 20px;
+    margin-bottom: 9px;
+    color: $secondary-dark-02-color;
+    @include typography(16px, 400, 140%);
+  }
+
+  &__placeholder {
+    @include position(absolute, $top: 22px, $left: 20px);
+    transition: ease-out $animation-default-time;
+
+    &--top {
+      top: 8px;
+    }
+  }
+}
+

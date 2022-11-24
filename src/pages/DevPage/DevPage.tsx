@@ -1,4 +1,7 @@
+import { useState } from 'react'
+
 import Button from '@UIkit/Button'
+import TextField from '@UIkit/Input/TextField/TextField'
 import Typography from '@UIkit/Typography'
 
 import icons from '@Assets/images/icons'
@@ -9,6 +12,7 @@ import PageLayout from '@Layouts/PageLayout'
 import './DevPage.scss'
 
 function DevPage() {
+  const [value, setValue] = useState('')
   return (
     <PageLayout>
       <Typography
@@ -45,6 +49,11 @@ function DevPage() {
       >
         Добавить фото
       </Button>
+      <TextField
+        text="Имя"
+        value={value}
+        setValue={setValue}
+      />
     </PageLayout>
   )
 }
