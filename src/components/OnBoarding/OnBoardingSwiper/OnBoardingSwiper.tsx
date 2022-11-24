@@ -11,7 +11,11 @@ import onboarding from '@Assets/images/onboarding'
 import './OnBoardingSwiper.scss'
 import OnBoardingSwiperProps from './OnBoardingSwiper.types'
 
-function OnBoardingSwiper({ swiperRef, setIsLastSlide }: OnBoardingSwiperProps) {
+function OnBoardingSwiper({
+  onSwiperImageHandler,
+  onSwiperTextHandler,
+  setSwiperActiveIndex,
+}: OnBoardingSwiperProps) {
   const slides = [
     {
       id: 0,
@@ -37,33 +41,45 @@ function OnBoardingSwiper({ swiperRef, setIsLastSlide }: OnBoardingSwiperProps) 
   ]
 
   return (
-    <Swiper
-      className="onboarding__swiper"
-      ref={swiperRef}
-      // install Swiper modules
-      modules={[Pagination, A11y, EffectFade]}
-      effect="fade"
-      fadeEffect={{
-        crossFade: true,
-      }}
-      slidesPerView={1}
-      pagination
-      onActiveIndexChange={(wriper) =>
-        wriper.activeIndex === wriper.slides.length - 1
-          ? setIsLastSlide(true)
-          : setIsLastSlide(false)
-      }
-    >
-      {slides.map((slide) => (
-        <SwiperSlide key={slide.id}>
-          <OnBoardingContent
-            image={slide.image}
-            title={slide.title}
-            text={slide.text}
-          />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <>
+      <Swiper
+        className="onboarding__swiper"
+        // install Swiper modules
+        modules={[A11y, EffectFade]}
+        onSwiper={onSwiperImageHandler}
+        onActiveIndexChange={(swiper) => setSwiperActiveIndex(swiper.activeIndex)}
+        effect="fade"
+        fadeEffect={{
+          crossFade: true,
+        }}
+        slidesPerView={1}
+      >
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <OnBoardingContent image={slide.image} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <Swiper
+        className="onboarding__swiper"
+        // install Swiper modules
+        modules={[Pagination, A11y]}
+        onSwiper={onSwiperTextHandler}
+        onActiveIndexChange={(swiper) => setSwiperActiveIndex(swiper.activeIndex)}
+        slidesPerView={1}
+        pagination
+      >
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <OnBoardingContent
+              title={slide.title}
+              text={slide.text}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   )
 }
 

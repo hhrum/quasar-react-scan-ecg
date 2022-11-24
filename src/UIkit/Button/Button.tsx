@@ -24,7 +24,7 @@ function Button({ className, type, icon, disabled, onClick, children }: ButtonPr
       disabled={disabled}
       onClick={onClick}
     >
-      {icon && <IconComponent />}
+      {IconComponent && <IconComponent />}
 
       <Typography
         className="button__text"

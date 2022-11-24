@@ -1,6 +1,9 @@
+import Swiper from 'swiper'
+
 interface OnBoardingSwiperProps {
-  swiperRef: any
-  setIsLastSlide: React.Dispatch<React.SetStateAction<boolean>>
+  onSwiperImageHandler: (swiper: Swiper) => void
+  onSwiperTextHandler: (swiper: Swiper) => void
+  setSwiperActiveIndex: React.Dispatch<React.SetStateAction<number>>
 }
 
 export default OnBoardingSwiperProps

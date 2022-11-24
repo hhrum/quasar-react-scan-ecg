@@ -8,7 +8,7 @@ import { ReactComponent as Play } from './play.svg'
 import { ReactComponent as Share } from './share.svg'
 import { ReactComponent as Xmark } from './xmark.svg'
 
-export default {
+const icons = {
   Check,
   HeartActive,
   HeartDefault,
@@ -18,4 +18,10 @@ export default {
   Photo,
   Share,
   Xmark,
-}
+} as const
+
+export default icons
+
+export type IconsKeysType = keyof typeof icons
+
+export type IconType = typeof icons[IconsKeysType]

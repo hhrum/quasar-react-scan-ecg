@@ -10,9 +10,11 @@ function OnBoardingContent({ image, title, text }: OnBoardingContentProps) {
 
   return (
     <div className="onboarding-content">
-      <div className="onboarding-content__img">
-        <ImageComponent />
-      </div>
+      {image && (
+        <div className="onboarding-content__img">
+          <ImageComponent />
+        </div>
+      )}
 
       <Group
         align="center"
@@ -36,6 +38,7 @@ function OnBoardingContent({ image, title, text }: OnBoardingContentProps) {
 }
 
 OnBoardingContent.defaultProps = {
+  image: null,
   title: null,
   text: null,
 }
