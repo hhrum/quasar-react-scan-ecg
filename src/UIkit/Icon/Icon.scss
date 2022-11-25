@@ -1,0 +1,32 @@
+.icon {
+  // @include square(24px);
+
+  &__image {
+    width: inherit;
+    height: inherit;
+  }
+
+  &--circle {
+    position: relative;
+
+    @include square(40px);
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include flexible(center, center);
+
+    &:before {
+      content: '';
+      @include position(absolute, 0, 0, 0, 0);
+      z-index: 0;
+      background-color: currentColor;
+      opacity: 0.3;
+      filter: brightness(200%);
+    }
+  }
+  &--circle &__image {
+    z-index: 2;
+
+    @include square(24px);
+  }
+}

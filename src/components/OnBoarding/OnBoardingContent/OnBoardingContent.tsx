@@ -1,5 +1,4 @@
-import Group from '@Components/Groups/Group'
-
+import Group from '@UIkit/Groups/Group'
 import Typography from '@UIkit/Typography'
 
 import './OnBoardingContent.scss'

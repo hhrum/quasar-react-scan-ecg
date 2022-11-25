@@ -44,6 +44,7 @@ module.exports = {
           ['@Constants', path.resolve(__dirname, 'src/constants/')],
           ['@Layouts', path.resolve(__dirname, 'src/layouts/')],
           ['@Pages', path.resolve(__dirname, 'src/pages/')],
+          ['@Types', path.resolve(__dirname, 'src/types/')],
         ],
         extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
       },
@@ -64,6 +65,7 @@ module.exports = {
     "no-unused-vars": [0],
     "@typescript-eslint/no-unused-vars": [2],
     "@typescript-eslint/ban-types": [2],
+    "@typescript-eslint/no-explicit-any": [2],
 
     'jsx-a11y/no-static-element-interactions': [0],
     'jsx-a11y/click-events-have-key-events': [0],

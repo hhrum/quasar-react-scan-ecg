@@ -16,6 +16,7 @@ module.exports = {
       "@Hooks": path.resolve(__dirname, "src/hooks/"),
       "@Layouts": path.resolve(__dirname, "src/layouts/"),
       "@Pages": path.resolve(__dirname, "src/pages/"),
+      "@Types": path.resolve(__dirname, "src/types/"),
       "@UIkit": path.resolve(__dirname, "src/UIkit/"),
       "@Utils": path.resolve(__dirname, "src/utils/")
     }

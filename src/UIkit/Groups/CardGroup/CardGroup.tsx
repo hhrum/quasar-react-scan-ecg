@@ -1,9 +1,8 @@
 import classNames from 'classnames'
 
-import Group from '@Components/Groups/Group'
-
 import Typography from '@UIkit/Typography'
 
+import Group from '../Group'
 import './CardGroup.scss'
 import CardGroupProps from './CardGroup.types'
 

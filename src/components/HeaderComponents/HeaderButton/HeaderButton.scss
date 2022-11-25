@@ -1,0 +1,12 @@
+.header-button {
+  position: relative;
+  background-color: transparent;
+  @include square($height-header, $height-header);
+
+  @include flexible(center, center);
+
+  //!
+  .icon {
+    @include square(18px);
+  }
+}

@@ -1,7 +1,7 @@
-import CardGroup from '@Components/Groups/CardGroup'
+import Card from '@Components/Card'
 
 import Button from '@UIkit/Button'
-import Card from '@UIkit/Card'
+import CardGroup from '@UIkit/Groups/CardGroup'
 import Typography from '@UIkit/Typography'
 
 import icons from '@Assets/images/icons'

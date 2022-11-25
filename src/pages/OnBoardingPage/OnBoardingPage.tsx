@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
 import Swiper from 'swiper'
 
-import Group from '@Components/Groups/Group'
 import OnBoardingSwiper from '@Components/OnBoarding/OnBoardingSwiper'
 
 import Button from '@UIkit/Button'
+import Group from '@UIkit/Groups/Group'
 
 import PageLayout from '@Layouts/PageLayout'
 
