@@ -1,4 +1,4 @@
-import { ChildrenTypes } from 'src/types/Children.types'
+import { ElementTypes } from '@Types/Element.types'
 
 type TypographyVariants =
   | 'heading-h1'
@@ -12,7 +12,7 @@ type TypographyVariants =
 interface TypographyProps {
   className?: string
   color?: string
-  children?: ChildrenTypes
+  children?: ElementTypes
   variant?: TypographyVariants
 }
 

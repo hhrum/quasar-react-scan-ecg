@@ -31,23 +31,35 @@ function DevPage() {
       <Button type="secondary">Получить код</Button>
       <Button
         type="primary"
-        icon="play"
-        iconColor={colors.secondaryLight01}
+        icon={
+          <Icon
+            iconName="camera"
+            color={colors.white}
+          />
+        }
       >
         Играть
       </Button>
       <Button
         type="primary"
-        icon="camera"
-        iconColor={colors.secondaryLight01}
+        icon={
+          <Icon
+            iconName="play"
+            color={colors.primary}
+          />
+        }
         disabled
       >
         Играть
       </Button>
       <Button
         type="primary"
-        icon="share"
-        iconColor={colors.secondaryLight01}
+        icon={
+          <Icon
+            iconName="camera"
+            color={colors.secondaryDark02}
+          />
+        }
       >
         Добавить фото
       </Button>

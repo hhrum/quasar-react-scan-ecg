@@ -17,6 +17,7 @@ module.exports = {
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:@typescript-eslint/recommended',
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     'prettier',
   ],
   overrides: [],
@@ -62,7 +63,10 @@ module.exports = {
     'prettier/prettier': [2, { "endOfLine": "auto"}, { usePrettierrc: true }],
     'react/jsx-uses-react': [0],
     'react/react-in-jsx-scope': [0],
+    // ! Ne workaet :()
+    "react/require-default-props": [2, { forbidDefaultForRequired: true }],
 
+    'no-console': [0],
     "no-unused-vars": [0],
     "@typescript-eslint/no-unused-vars": [2],
     "@typescript-eslint/ban-types": [2],

@@ -5,7 +5,7 @@ import colors from '@Assets/styles/colors'
 import IconProps from './Icon.types'
 import iconsPaths from './iconsPaths'
 
-function Icon({ iconName, color, size, className }: IconProps) {
+function Icon({ className, iconName, color, size }: IconProps) {
   const iconClass = classNames('icon', className)
 
   return (
@@ -24,6 +24,8 @@ function Icon({ iconName, color, size, className }: IconProps) {
 }
 
 Icon.defaultProps = {
+  className: '',
+
   color: colors.primary,
   size: 24,
 }
