@@ -1,11 +1,14 @@
 import classnames from 'classnames'
 
+import Icon from '@UIkit/Icon'
 import Typography from '@UIkit/Typography'
+
+import colors from '@Assets/styles/colors'
 
 import './Button.scss'
 import ButtonProps from './Button.types'
 
-function Button({ className, type, icon, disabled, onClick, children }: ButtonProps) {
+function Button({ className, type, icon, iconColor, disabled, onClick, children }: ButtonProps) {
   const buttonClassName = classnames(
     'button',
     `button--${type}`,
@@ -15,8 +18,6 @@ function Button({ className, type, icon, disabled, onClick, children }: ButtonPr
     className,
   )
 
-  const IconComponent = icon
-
   return (
     <button
       type="button"
@@ -24,7 +25,12 @@ function Button({ className, type, icon, disabled, onClick, children }: ButtonPr
       disabled={disabled}
       onClick={onClick}
     >
-      {IconComponent && <IconComponent />}
+      {icon && (
+        <Icon
+          iconName={icon}
+          color={iconColor}
+        />
+      )}
 
       <Typography
         className="button__text"
@@ -40,6 +46,7 @@ Button.defaultProps = {
   className: '',
   type: 'primary',
   icon: null,
+  iconColor: colors.white,
   disabled: false,
   onClick: () => null,
   children: null,

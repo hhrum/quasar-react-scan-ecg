@@ -1,9 +1,9 @@
-import { IconType } from '@Assets/images/icons'
+import { IconNameTypes } from '@Types/Icon.types'
 
 interface HeaderButtonProps {
   className: string
 
-  icon: IconType
+  icon: IconNameTypes
   color: string
   onClick: () => void
 

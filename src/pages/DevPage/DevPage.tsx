@@ -2,9 +2,9 @@ import Card from '@Components/Card'
 
 import Button from '@UIkit/Button'
 import CardGroup from '@UIkit/Groups/CardGroup'
+import Icon from '@UIkit/Icon'
 import Typography from '@UIkit/Typography'
 
-import icons from '@Assets/images/icons'
 import colors from '@Assets/styles/colors'
 
 import PageLayout from '@Layouts/PageLayout'
@@ -31,20 +31,23 @@ function DevPage() {
       <Button type="secondary">Получить код</Button>
       <Button
         type="primary"
-        icon={icons.Play}
+        icon="play"
+        iconColor={colors.secondaryLight01}
       >
         Играть
       </Button>
       <Button
         type="primary"
-        icon={icons.Play}
+        icon="camera"
+        iconColor={colors.secondaryLight01}
         disabled
       >
         Играть
       </Button>
       <Button
         type="primary"
-        icon={icons.Photo}
+        icon="share"
+        iconColor={colors.secondaryLight01}
       >
         Добавить фото
       </Button>
@@ -66,6 +69,8 @@ function DevPage() {
           textDate="12.10.2022"
         />
       </CardGroup>
+
+      <Icon iconName="check" />
     </PageLayout>
   )
 }

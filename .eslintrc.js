@@ -58,6 +58,7 @@ module.exports = {
         amd: true,
       },
     ],
+    "import/prefer-default-export": [0],
     'prettier/prettier': [2, { "endOfLine": "auto"}, { usePrettierrc: true }],
     'react/jsx-uses-react': [0],
     'react/react-in-jsx-scope': [0],

@@ -1,10 +1,12 @@
-import { IconType } from '@Assets/images/icons'
+import { IconPathType } from './iconsPaths'
+
+type IconNameType = keyof IconPathType
 
 interface IconProps {
-  className?: string
-  icon: IconType
+  iconName: IconNameType
   color?: string
-  circle?: boolean
+  size?: number
+  className?: string
 }
 
 export default IconProps

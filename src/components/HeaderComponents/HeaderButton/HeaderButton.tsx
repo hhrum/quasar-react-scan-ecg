@@ -1,9 +1,8 @@
 import classnames from 'classnames'
 
 import CustomLink from '@UIkit/CustomLink'
-import Icon from '@UIkit/Icon'
 
-import icons from '@Assets/images/icons'
+// import Icon from '@UIkit/Icon'
 import colors from '@Assets/styles/colors'
 
 import './HeaderButton.scss'
@@ -20,6 +19,7 @@ function HeaderButton({
   goBack,
 }: HeaderButtonProps) {
   const HeaderButtonClassName = classnames('header-button', className)
+  console.log(icon, color)
 
   return (
     <CustomLink
@@ -28,10 +28,11 @@ function HeaderButton({
       to={to}
       goBack={goBack}
     >
-      <Icon
+      test
+      {/* <Icon
         icon={icon}
         color={color}
-      />
+      /> */}
     </CustomLink>
   )
 }
@@ -39,7 +40,7 @@ function HeaderButton({
 HeaderButton.defaultProps = {
   className: '',
 
-  icon: icons.Xmark,
+  icon: 'xmark',
   color: colors.primary,
   onClick: () => null,
 

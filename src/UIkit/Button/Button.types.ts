@@ -1,16 +1,17 @@
+import { ChildrenTypes } from '@Types/Children.types'
+import { IconNameTypes } from '@Types/Icon.types'
 import { MouseEventHandler } from 'react'
-
-import { IconType } from '@Assets/images/icons'
 
 type ButtonTypes = 'primary' | 'secondary'
 
 interface ButtonProps {
   className?: string
   type?: ButtonTypes
-  icon?: IconType
+  icon?: IconNameTypes
+  iconColor?: string
   disabled?: boolean
   onClick?: MouseEventHandler
-  children?: JSX.Element | JSX.Element[] | string
+  children?: ChildrenTypes
   to?: string
 }
 

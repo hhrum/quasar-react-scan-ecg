@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 
+import Icon from '@UIkit/Icon'
 import Typography from '@UIkit/Typography'
 
-import icons from '@Assets/images/icons'
 import colors from '@Assets/styles/colors'
 
 import './Card.scss'
@@ -23,8 +23,6 @@ function Card({ image, name, textDate, className, isBigCard }: CardProps) {
     imageContent = <ImageComponent className="card__image" />
   }
 
-  const HeartIconComponent = icons.HeartDefault
-
   let dateContent = null
   if (isBigCard && textDate) {
     dateContent = (
@@ -42,7 +40,10 @@ function Card({ image, name, textDate, className, isBigCard }: CardProps) {
     <div className={cardClass}>
       <div className="card__image-wrapper">
         {imageContent}
-        <HeartIconComponent className="card__icon" />
+        <Icon
+          className="card__icon"
+          iconName="heartDefault"
+        />
       </div>
 
       <Typography

@@ -1,38 +1,31 @@
-import classnames from 'classnames'
+import classNames from 'classnames'
 
-import './Icon.scss'
+import colors from '@Assets/styles/colors'
+
 import IconProps from './Icon.types'
+import iconsPaths from './iconsPaths'
 
-function Icon({ className, icon, color, circle }: IconProps) {
-  const iconClass = classnames(
-    'icon',
-    {
-      'icon--circle': circle,
-    },
-    className,
-  )
-  const iconStyle: React.CSSProperties = {}
-
-  if (color) {
-    iconStyle.color = color
-  }
-
-  const IconComponent = icon
+function Icon({ iconName, color, size, className }: IconProps) {
+  const iconClass = classNames('icon', className)
 
   return (
-    <div
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      style={{ color }}
       className={iconClass}
-      style={iconStyle}
+      viewBox="0 0 24 24"
+      fill="none"
     >
-      <IconComponent className="icon__image" />
-    </div>
+      {iconsPaths[iconName]}
+    </svg>
   )
 }
 
 Icon.defaultProps = {
-  className: '',
-  color: null,
-  circle: false,
+  color: colors.primary,
+  size: 24,
 }
 
 export default Icon
