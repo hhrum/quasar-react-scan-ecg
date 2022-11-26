@@ -15,5 +15,6 @@
 
   &__icon {
     padding-right: 20px;
+    @include flexible(center, center);
   }
 }

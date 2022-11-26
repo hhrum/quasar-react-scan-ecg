@@ -56,19 +56,21 @@ function NumberField({ className, tel, minLength, maxLength }: NumberFieldProps)
       )}
       {/* eslint-disable-next-line no-nested-ternary */}
       {errors?.Numbers ? (
-        <Icon
-          className="number-field__icon"
-          iconName="xmark"
-          color={colors.secondaryError}
-        />
+        <div className="number-field__icon">
+          <Icon
+            iconName="xmark"
+            color={colors.secondaryError}
+          />
+        </div>
       ) : !getValues('Numbers') ? (
         <div />
       ) : (
-        <Icon
-          className="number-field__icon"
-          iconName="check"
-          color={colors.secondarySuccess}
-        />
+        <div className="number-field__icon">
+          <Icon
+            iconName="check"
+            color={colors.secondarySuccess}
+          />
+        </div>
       )}
     </div>
   )
