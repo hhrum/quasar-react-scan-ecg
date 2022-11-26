@@ -1,3 +1,4 @@
+import { ElementTypes } from '@Types/Element.types'
 import { MouseEventHandler } from 'react'
 
 type ButtonTypes = 'primary' | 'secondary'
@@ -5,10 +6,11 @@ type ButtonTypes = 'primary' | 'secondary'
 interface ButtonProps {
   className?: string
   type?: ButtonTypes
-  icon?: any
+  icon?: JSX.Element
+  iconColor?: string
   disabled?: boolean
   onClick?: MouseEventHandler
-  children?: JSX.Element | JSX.Element[] | string
+  children?: ElementTypes
   to?: string
 }
 

@@ -1,13 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
+import classnames from 'classnames'
+import PropTypes from 'prop-types'
+import React from 'react'
 
-import Group from '@Components/Groups/Group';
+import Group from '@Components/Groups/Group'
 
-import isFragment from '@Utils/isFragment';
-import childrenToArray from '@Utils/childrenToArray';
+import childrenToArray from '@Utils/childrenToArray'
+import isFragment from '@Utils/isFragment'
 
-import './CellGroup.scss';
+import './CellGroup.scss'
 
 function CellGroup({
   className,
@@ -21,34 +21,30 @@ function CellGroup({
   useSeparator,
   useBorderSeparator,
 }) {
-  const CellGroupClassName = classnames('cell-group', className);
+  const CellGroupClassName = classnames('cell-group', className)
   const SeparatorClassName = classnames(
     'cell-group__separator',
     {
       'cell-group__separator': noPaddingSeparator,
     },
     separatorClassName,
-  );
+  )
 
-  const separator = (
-    <div className={SeparatorClassName} />
-  );
+  const separator = <div className={SeparatorClassName} />
 
-  let content = children;
+  let content = children
 
-  if (
-    useSeparator
-    && children
-    && (Array.isArray(children) || isFragment(children))
-  ) {
-    content = childrenToArray(children).map(
-      (item, index) => [
-        index !== 0
+  if (useSeparator && children && (Array.isArray(children) || isFragment(children))) {
+    content = childrenToArray(children).map((item, index) => [
+      index !== 0 && (
         // eslint-disable-next-line react/no-array-index-key
-        && <div key={`separator${index}`} className={SeparatorClassName} />,
-        item,
-      ],
-    );
+        <div
+          key={`separator${index}`}
+          className={SeparatorClassName}
+        />
+      ),
+      item,
+    ])
   }
 
   return (
@@ -63,7 +59,7 @@ function CellGroup({
       {content}
       {useBorderSeparator && separator}
     </Group>
-  );
+  )
 }
 
 CellGroup.defaultProps = {
@@ -77,26 +73,19 @@ CellGroup.defaultProps = {
 
   useSeparator: false,
   useBorderSeparator: false,
-};
+}
 
 CellGroup.propTypes = {
   className: PropTypes.string,
   separatorClassName: PropTypes.string,
-  style: PropTypes.objectOf(
-    PropTypes.string,
-  ),
-  header: PropTypes.oneOfType([
-    PropTypes.element,
-    PropTypes.string,
-  ]),
-  children: PropTypes.oneOfType([
-    PropTypes.any,
-  ]),
+  style: PropTypes.objectOf(PropTypes.string),
+  header: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
+  children: PropTypes.oneOfType([PropTypes.any]),
 
   noPaddingSeparator: PropTypes.bool,
 
   useSeparator: PropTypes.bool,
   useBorderSeparator: PropTypes.bool,
-};
+}
 
-export default CellGroup;
+export default CellGroup

@@ -1,0 +1,32 @@
+.card {
+  width: 130px;
+  @include flexible($fd: column, $gap: 12px);
+
+  &__image-wrapper {
+    position: relative;
+  }
+
+  &__image,
+  &__empty-image {
+    @include square(130px, 20px);
+  }
+
+  &__empty-image {
+    background-color: $secondary-light-01-color;
+  }
+
+  &__icon {
+    @include position(absolute, 12px, 12px);
+  }
+
+  &--big {
+    width: 160px;
+    gap: 8px;
+
+    .card__image,
+    .card__empty-image {
+      @include width(160px);
+      @include height(170px);
+    }
+  }
+}

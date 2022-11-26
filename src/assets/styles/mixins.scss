@@ -9,13 +9,21 @@
   }
 }
 
-@mixin square($size, $radius: 0) {
+@mixin width($size, $min-size: $size, $max-size: $size) {
   width: $size;
-  min-width: $size;
-  max-width: $size;
+  min-width: $min-size;
+  max-width: $max-size;
+}
+
+@mixin height($size, $min-size: $size, $max-size: $size) {
   height: $size;
-  min-height: $size;
-  max-height: $size;
+  min-height: $min-size;
+  max-height: $max-size;
+}
+
+@mixin square($size, $radius: 0) {
+  @include width($size);
+  @include height($size);
 
   @if $radius != 0 {
     border-radius: $radius;

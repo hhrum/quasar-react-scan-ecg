@@ -1,0 +1,42 @@
+.header {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: $height-header min-content;
+  grid-template-areas:
+    'left-side center-side right-side'
+    'bottom-side bottom-side bottom-side';
+  align-items: center;
+
+  background-color: $white-color;
+
+  &__left-side {
+    grid-area: left-side;
+    align-self: stretch;
+    justify-self: stretch;
+
+    @include flexible(center, center);
+  }
+
+  &__center-side {
+    grid-area: center-side;
+    align-self: stretch;
+    justify-self: stretch;
+
+    @include flexible(center, center);
+  }
+
+  &__right-side {
+    grid-area: right-side;
+    align-self: stretch;
+    justify-self: stretch;
+
+    @include flexible(center, center);
+  }
+
+  &__bottom-side {
+    grid-area: bottom-side;
+    background-color: transparent;
+  }
+}

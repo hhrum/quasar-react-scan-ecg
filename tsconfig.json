@@ -9,6 +9,7 @@
       "@Constants/*": ["src/constants/*"],
       "@Layouts/*": ["src/layouts/*"],
       "@Pages/*": ["src/pages/*"],
+      "@Types/*": ["src/types/*"],
       "@UIkit/*": ["src/UIkit/*"]
     },
     "target": "es5",

@@ -1,3 +1,5 @@
+import { ElementTypes } from '@Types/Element.types'
+
 type TypographyVariants =
   | 'heading-h1'
   | 'heading-h2'
@@ -10,7 +12,7 @@ type TypographyVariants =
 interface TypographyProps {
   className?: string
   color?: string
-  children?: JSX.Element | JSX.Element[] | string
+  children?: ElementTypes
   variant?: TypographyVariants
 }
 

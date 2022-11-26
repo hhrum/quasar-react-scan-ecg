@@ -1,7 +1,7 @@
 // import onboarding from '@Assets/images/onboarding'
 
 interface OnBoardingContentProps {
-  image: any
+  image?: any
 
   title?: string
   text?: string

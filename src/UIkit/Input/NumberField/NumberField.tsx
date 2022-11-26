@@ -2,9 +2,10 @@ import classnames from 'classnames'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
+import Icon from '@UIkit/Icon'
 import NumberFieldProps from '@UIkit/Input/NumberField/NumberField.types'
 
-import icons from '@Assets/images/icons'
+import colors from '@Assets/styles/colors'
 
 import './NumberField.scss'
 
@@ -28,8 +29,6 @@ function NumberField({ className, tel, minLength, maxLength }: NumberFieldProps)
       setValue('Numbers', '+7')
     }
   }
-  const SuccessIcon = icons.Check
-  const MarkIcon = icons.Xmark
   return (
     <div className={NumberFieldClassName}>
       {tel ? (
@@ -57,15 +56,19 @@ function NumberField({ className, tel, minLength, maxLength }: NumberFieldProps)
       )}
       {/* eslint-disable-next-line no-nested-ternary */}
       {errors?.Numbers ? (
-        <div className="number-field__icon">
-          <MarkIcon />
-        </div>
+        <Icon
+          className="number-field__icon"
+          iconName="xmark"
+          color={colors.secondaryError}
+        />
       ) : !getValues('Numbers') ? (
         <div />
       ) : (
-        <div className="number-field__icon">
-          <SuccessIcon />
-        </div>
+        <Icon
+          className="number-field__icon"
+          iconName="check"
+          color={colors.secondarySuccess}
+        />
       )}
     </div>
   )
