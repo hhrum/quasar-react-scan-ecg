@@ -1,5 +1,4 @@
-.input {
-  margin-top: 10px;
+.text-field {
   position: relative;
   display: flex;
   width: 100%;
@@ -9,12 +8,18 @@
   border-bottom: .5px solid $secondary-light-02-color;
   @include flexible(flex-end, flex-start);
 
-  &__text-field {
+  &__input {
     width: inherit;
-    margin-left: 20px;
-    margin-bottom: 9px;
+    height: inherit;
+    background-color: transparent;
+    padding-left: 20px;
+    padding-bottom: 9px;
     color: $secondary-dark-02-color;
     @include typography(16px, 400, 140%);
+
+    &--top {
+      padding-top: 35px;
+    }
   }
 
   &__placeholder {

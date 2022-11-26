@@ -6,12 +6,21 @@ import Typography from '@UIkit/Typography'
 
 import './TextField.scss'
 
-function TextField({ className, text, value, setValue }: TextFieldProps) {
+function TextField({ className, placeholder, value, setValue }: TextFieldProps) {
   const [placeholderOnTop, setPlaceholderOnTop] = useState(false)
-  const inputFieldClaasName = classnames('input__text-field', className)
-  const placeholderClassName = classnames('input__placeholder', {
-    'input__placeholder--top': placeholderOnTop,
+  const inputFieldClaasName = classnames(
+    'text-field__input',
+    {
+      'text-field__input--top': placeholderOnTop,
+    },
+    className,
+  )
+  const placeholderClassName = classnames('text-field__placeholder', {
+    'text-field__placeholder--top': placeholderOnTop,
   })
+  if (value && !placeholderOnTop) {
+    setPlaceholderOnTop((prevState) => !prevState)
+  }
   const changeHandler = (event: { target: { value: SetStateAction<string> } }) => {
     if (setValue) {
       setValue(event.target.value)
@@ -28,7 +37,7 @@ function TextField({ className, text, value, setValue }: TextFieldProps) {
     }
   }
   return (
-    <div className="input">
+    <div className="text-field">
       <input
         value={value}
         onChange={changeHandler}
@@ -41,7 +50,7 @@ function TextField({ className, text, value, setValue }: TextFieldProps) {
         className={placeholderClassName}
         variant="text-t1-bold"
       >
-        {text}
+        {placeholder}
       </Typography>
     </div>
   )
@@ -49,7 +58,7 @@ function TextField({ className, text, value, setValue }: TextFieldProps) {
 
 TextField.defaultProps = {
   className: '',
-  text: '',
+  placeholder: '',
   value: '',
   setValue: () => null,
 }
