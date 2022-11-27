@@ -1,20 +1,17 @@
 import classnames from 'classnames'
 import { SetStateAction, useState } from 'react'
 
-import TextFieldProps from '@UIkit/Input/TextField/TextField.types'
 import Typography from '@UIkit/Typography'
 
 import './TextField.scss'
+import TextFieldProps from './TextField.types'
 
 function TextField({ className, placeholder, value, setValue }: TextFieldProps) {
   const [placeholderOnTop, setPlaceholderOnTop] = useState(false)
-  const inputFieldClaasName = classnames(
-    'text-field__input',
-    {
-      'text-field__input--top': placeholderOnTop,
-    },
-    className,
-  )
+  const InputFieldClassName = classnames('text-field', className)
+  const TextFieldClaasName = classnames('text-field__input', {
+    'text-field__input--top': placeholderOnTop,
+  })
   const placeholderClassName = classnames('text-field__placeholder', {
     'text-field__placeholder--top': placeholderOnTop,
   })
@@ -37,13 +34,13 @@ function TextField({ className, placeholder, value, setValue }: TextFieldProps) 
     }
   }
   return (
-    <div className="text-field">
+    <div className={InputFieldClassName}>
       <input
         value={value}
         onChange={changeHandler}
         onBlur={blurHandler}
         onFocus={focusHandler}
-        className={inputFieldClaasName}
+        className={TextFieldClaasName}
         type="text"
       />
       <Typography

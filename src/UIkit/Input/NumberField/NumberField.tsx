@@ -3,14 +3,14 @@ import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
 import Icon from '@UIkit/Icon'
-import NumberFieldProps from '@UIkit/Input/NumberField/NumberField.types'
 
 import colors from '@Assets/styles/colors'
 
 import './NumberField.scss'
+import NumberFieldProps from './NumberField.types'
 
 function NumberField({ className, tel, minLength, maxLength }: NumberFieldProps) {
-  const NumberFieldClassName = classnames('number-field', className)
+  const InputFieldClassName = classnames('number-field', className)
   const {
     register,
     formState: { errors },
@@ -29,9 +29,9 @@ function NumberField({ className, tel, minLength, maxLength }: NumberFieldProps)
       setValue('Numbers', '+7')
     }
   }
-  return (
-    <div className={NumberFieldClassName}>
-      {tel ? (
+  if (tel) {
+    return (
+      <div className={InputFieldClassName}>
         <input
           className="number-field__input"
           type="tel"
@@ -42,19 +42,37 @@ function NumberField({ className, tel, minLength, maxLength }: NumberFieldProps)
           })}
           onFocus={getInitialState}
         />
-      ) : (
-        <input
-          className="number-field__input"
-          type="tel"
-          /* eslint-disable-next-line react/jsx-props-no-spreading */
-          {...register('Numbers', {
-            minLength,
-            maxLength,
-            pattern: /^[0-9]+$/,
-          })}
-        />
-      )}
-      {/* eslint-disable-next-line no-nested-ternary */}
+        {errors?.Numbers ? (
+          <div className="number-field__icon">
+            <Icon
+              iconName="xmark"
+              color={colors.secondaryError}
+            />
+          </div>
+        ) : (
+          <div className="number-field__icon">
+            <Icon
+              iconName="check"
+              color={colors.secondarySuccess}
+            />
+          </div>
+        )}
+        {!getValues('Numbers') && <div className="number-field__empty-icon" />}
+      </div>
+    )
+  }
+  return (
+    <div className={InputFieldClassName}>
+      <input
+        className="number-field__input"
+        type="tel"
+        /* eslint-disable-next-line react/jsx-props-no-spreading */
+        {...register('Numbers', {
+          minLength,
+          maxLength,
+          pattern: /^[0-9]+$/,
+        })}
+      />
       {errors?.Numbers ? (
         <div className="number-field__icon">
           <Icon
@@ -62,8 +80,6 @@ function NumberField({ className, tel, minLength, maxLength }: NumberFieldProps)
             color={colors.secondaryError}
           />
         </div>
-      ) : !getValues('Numbers') ? (
-        <div />
       ) : (
         <div className="number-field__icon">
           <Icon
@@ -72,6 +88,7 @@ function NumberField({ className, tel, minLength, maxLength }: NumberFieldProps)
           />
         </div>
       )}
+      {!getValues('Numbers') && <div className="number-field__empty-icon" />}
     </div>
   )
 }
