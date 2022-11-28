@@ -1,16 +1,18 @@
 .group {
-  width: 100%;
 
   @include flexible(stretch, $fd: column, $gap: 16px);
+
+  width: 100%;
 
   &__header {
     padding: 0 20px;
   }
 
   &__content {
-    padding: 0 20px;
 
     @include flexible($fd: column, $gap: 16px);
+
+    padding: 0 20px;
 
     &--no-padding {
       padding: 0;

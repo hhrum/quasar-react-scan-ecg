@@ -5,19 +5,18 @@ module.exports = {
     node: true,
     browser: true,
     es2021: true,
-  },  
+  },
   extends: [
-    'airbnb',
-    'airbnb-typescript',
-    'airbnb/hooks',
     'eslint:recommended',
-    'eslint-config-prettier',
     'plugin:react/recommended',
+    "plugin:react-hooks/recommended",
     'plugin:import/recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
+    "plugin:@typescript-eslint/eslint-recommended",
     'plugin:@typescript-eslint/recommended',
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    'eslint-config-prettier',
     'prettier',
   ],
   overrides: [],
@@ -29,10 +28,11 @@ module.exports = {
   },
   plugins: [
     'react',
-    '@typescript-eslint',
+    "react-hooks",
     'import',
-    'prettier',
+    '@typescript-eslint',
     'eslint-plugin-prettier',
+    'prettier',
   ],
   settings: {
     'import/resolver': {
@@ -50,8 +50,28 @@ module.exports = {
         extensions: ['.js', '.ts', '.jsx', '.tsx', '.json'],
       },
     },
+    "react": {
+      "version": "detect"
+    }
   },
   rules: {
+    'react/jsx-uses-react': [0],
+    'react/react-in-jsx-scope': [0],
+
+    'jsx-a11y/no-static-element-interactions': [0],
+    'jsx-a11y/click-events-have-key-events': [0],
+    'jsx-a11y/no-noninteractive-element-interactions': [0],
+
+    'no-console': [0],
+    'linebreak-style': [0],
+    "max-len": [2, 100, 2, {
+      "ignoreUrls": true,
+      "ignoreComments": true,
+      "ignoreRegExpLiterals": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }],
+
     'import/no-unresolved': [
       0,
       {
@@ -60,22 +80,11 @@ module.exports = {
       },
     ],
     "import/prefer-default-export": [0],
-    'prettier/prettier': [2, { "endOfLine": "auto"}, { usePrettierrc: true }],
-    'react/jsx-uses-react': [0],
-    'react/react-in-jsx-scope': [0],
-    // ! Ne workaet :()
-    "react/require-default-props": [2, { forbidDefaultForRequired: true }],
 
-    'no-console': [0],
-    "no-unused-vars": [0],
-    "@typescript-eslint/no-unused-vars": [2],
+    '@typescript-eslint/no-unused-vars': [2],
     "@typescript-eslint/ban-types": [2],
     "@typescript-eslint/no-explicit-any": [2],
 
-    'jsx-a11y/no-static-element-interactions': [0],
-    'jsx-a11y/click-events-have-key-events': [0],
-    'jsx-a11y/no-noninteractive-element-interactions': [0],
-    'linebreak-style': [0],
-    'max-len': [2, 100],
+    'prettier/prettier': [2, { "endOfLine": "auto" }, { usePrettierrc: true }],
   },
 }

@@ -2,17 +2,18 @@
   align-items: stretch;
 
   &__separator {
+
+    @include flexible(stretch, $fd: column);
+
     width: 100%;
     height: 1px;
     padding: 0 16px;
 
-    @include flexible(stretch, $fd: column);
-
-    &:after {
+    &::after {
       content: "";
-      background-color: $bg-gray-light-color;
       width: 100%;
       height: 100%;
+      background-color: $bg-gray-light-color;
     }
 
     &--no-padding {

@@ -1,6 +1,7 @@
 @mixin text-t2 {
   @include typography(12px, 400, 140%);
 }
+
 @mixin text-t2-bold {
   @include typography(12px, 600, 140%);
 }
@@ -8,6 +9,7 @@
 @mixin text-t1 {
   @include typography(16px, 400, 140%);
 }
+
 @mixin text-t1-bold {
   @include typography(16px, 600, 140%);
 }
@@ -15,9 +17,11 @@
 @mixin heading-h3 {
   @include typography(20px, 600, 120%);
 }
+
 @mixin heading-h2 {
   @include typography(24px, 600, 120%);
 }
+
 @mixin heading-h1 {
   @include typography(32px, 600, 120%);
 }

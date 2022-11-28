@@ -1,9 +1,10 @@
 import classnames from 'classnames'
 
-import './Typography.scss'
 import TypographyProps from './Typography.types'
 
-function Typography({ variant, color, className, children }: TypographyProps) {
+import './Typography.scss'
+
+function Typography({ className, variant = 'text-t1', color, children }: TypographyProps) {
   const typographyClass = classnames('typography', `typography--${variant}`, className)
   const typographyStyle: React.CSSProperties = {}
 
@@ -19,13 +20,6 @@ function Typography({ variant, color, className, children }: TypographyProps) {
       {children}
     </p>
   )
-}
-
-Typography.defaultProps = {
-  variant: 'heading-h1',
-  color: null,
-  className: null,
-  children: null,
 }
 
 export default Typography

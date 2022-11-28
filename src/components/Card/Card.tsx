@@ -1,12 +1,14 @@
 import classNames from 'classnames'
+import React, { ReactNode } from 'react'
 
 import Icon from '@UIkit/Icon'
 import Typography from '@UIkit/Typography'
 
 import colors from '@Assets/styles/colors'
 
-import './Card.scss'
 import CardProps from './Card.types'
+
+import './Card.scss'
 
 function Card({ image, name, textDate, className, isBigCard }: CardProps) {
   const cardClass = classNames(

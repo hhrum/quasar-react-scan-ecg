@@ -1,6 +1,7 @@
 .card {
-  width: 130px;
   @include flexible($fd: column, $gap: 12px);
+
+  width: 130px;
 
   &__image-wrapper {
     position: relative;
@@ -20,8 +21,8 @@
   }
 
   &--big {
-    width: 160px;
     gap: 8px;
+    width: 160px;
 
     .card__image,
     .card__empty-image {

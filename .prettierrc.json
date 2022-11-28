@@ -22,7 +22,8 @@
     "^@Constants/(.*)$",
     "^@Layouts/(.*)$",
     "^@Pages/(.*)$",
-    "^[./]"
+    "^\\.\\/([a-zA-Z]*)\\.types$",
+    "^\\.\\/([a-zA-Z]*)\\.scss$"
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true

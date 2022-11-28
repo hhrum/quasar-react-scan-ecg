@@ -1,25 +1,29 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.stylelintIntegration": true,
   "editor.formatOnSave": true,
 
-  // Использование локальных правил для StyleLint
+  //? Использование правил для StyleLint
   "stylelint.useLocal": true,
   "stylelint.autoFixOnSave": true,
+  "prettier.stylelintIntegration": true,
 
   "scss.validate": false,
   "css.validate": false,
-  "less.validate": false,
+  "stylelint.validate": ["css", "scss"],
 
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.stylelint": true,
+    "source.fixAll.eslint": true
   },
 
+  //? json с комментариями :)
   "files.associations": {
     "*.json": "jsonc"
   },
+
   "[scss]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
-  }
+  },
+
+  "eslint.validate": ["javascript", "javascriptreact", "typescriptreact", "typescript"]
 }

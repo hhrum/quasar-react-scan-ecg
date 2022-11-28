@@ -2,8 +2,6 @@ import classnames from 'classnames'
 
 import Typography from '@UIkit/Typography'
 
-import colors from '@Assets/styles/colors'
-
 import './Button.scss'
 import ButtonProps from './Button.types'
 
@@ -40,7 +38,6 @@ Button.defaultProps = {
   className: '',
   type: 'primary',
   icon: null,
-  iconColor: colors.white,
   disabled: false,
   onClick: () => null,
   children: null,

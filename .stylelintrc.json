@@ -1,23 +1,17 @@
 {
   "extends": [
+    "stylelint-config-standard",
     "stylelint-config-standard-scss",
     "stylelint-config-prettier",
     "stylelint-config-prettier-scss",
-    "stylelint-config-rational-order"
+    "stylelint-config-clean-order"
   ],
-  "plugins": [
-    "stylelint-scss",
-    "stylelint-prettier",
-    "stylelint-order",
-    "stylelint-config-rational-order/plugin"
-  ],
+  "plugins": ["stylelint-scss", "stylelint-prettier", "@namics/stylelint-bem"],
   "rules": {
-    "plugin/rational-order": [
-      true,
-      {
-        "border-in-box-model": false,
-        "empty-line-between-groups": true
-      }
-    ]
+    "plugin/stylelint-bem-namics": {
+      "patternPrefixes": [],
+      "helperPrefixes": []
+    },
+    "selector-class-pattern": null
   }
 }

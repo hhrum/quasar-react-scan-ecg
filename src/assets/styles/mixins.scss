@@ -41,14 +41,17 @@
 @mixin invisible {
   position: absolute;
   z-index: -1;
+
   display: block;
+
   width: 0;
   height: 0;
+
   opacity: 0;
 }
 
 @mixin typography($fs: 16px, $fw: 400, $lh: 16px) {
-  font-weight: $fw;
   font-size: $fs;
+  font-weight: $fw;
   line-height: $lh;
 }

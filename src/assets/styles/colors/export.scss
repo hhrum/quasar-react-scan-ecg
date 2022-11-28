@@ -1,6 +1,10 @@
 @import 'colors';
 
 :export {
+
+  // Grey colors
+  grey200: $grey-200-color;
+  grey700: $grey-700-color;
   // Primary colors
   primary: $primary-color;
 
@@ -11,17 +15,17 @@
   // Secondary colors
   secondaryButton: $secondary-button-color;
 
-  secondarySuccess: $secondary-success-color;
+  // Secondary dark colors
+  secondaryDark01: $secondary-dark-01-color;
+  secondaryDark02: $secondary-dark-02-color;
+  secondaryDark03: $secondary-dark-03-color;
   secondaryError: $secondary-error-color;
 
   // Secondary light colors
   secondaryLight01: $secondary-light-01-color;
   secondaryLight02: $secondary-light-02-color;
 
-  // Secondary dark colors
-  secondaryDark01: $secondary-dark-01-color;
-  secondaryDark02: $secondary-dark-02-color;
-  secondaryDark03: $secondary-dark-03-color;
+  secondarySuccess: $secondary-success-color;
 
   //--------------------------------------
   // Font colors
@@ -29,8 +33,4 @@
 
   // White colors
   white: $white-color;
-
-  // Grey colors
-  grey200: $grey-200-color;
-  grey700: $grey-700-color;
 }

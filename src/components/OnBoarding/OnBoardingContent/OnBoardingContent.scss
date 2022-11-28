@@ -1,6 +1,7 @@
 .onboarding-content {
   &__img {
     @include flexible($jc: center, $fd: inherit);
+
     margin-bottom: 24px;
   }
 

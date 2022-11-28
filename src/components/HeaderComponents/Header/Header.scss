@@ -1,38 +1,41 @@
 .header {
-  width: 100%;
-
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
-  grid-template-rows: $height-header min-content;
   grid-template-areas:
     'left-side center-side right-side'
     'bottom-side bottom-side bottom-side';
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: $height-header min-content;
   align-items: center;
+
+  width: 100%;
 
   background-color: $white-color;
 
   &__left-side {
+
+    @include flexible(center, center);
+
     grid-area: left-side;
     align-self: stretch;
     justify-self: stretch;
-
-    @include flexible(center, center);
   }
 
   &__center-side {
+
+    @include flexible(center, center);
+
     grid-area: center-side;
     align-self: stretch;
     justify-self: stretch;
-
-    @include flexible(center, center);
   }
 
   &__right-side {
+
+    @include flexible(center, center);
+
     grid-area: right-side;
     align-self: stretch;
     justify-self: stretch;
-
-    @include flexible(center, center);
   }
 
   &__bottom-side {

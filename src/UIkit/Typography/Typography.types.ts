@@ -11,9 +11,9 @@ type TypographyVariants =
 
 interface TypographyProps {
   className?: string
+  variant?: TypographyVariants
   color?: string
   children?: ElementTypes
-  variant?: TypographyVariants
 }
 
 export default TypographyProps
