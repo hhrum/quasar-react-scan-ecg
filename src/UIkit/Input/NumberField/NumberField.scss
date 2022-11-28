@@ -1,0 +1,31 @@
+.number-field {
+  position: relative;
+  width: 100%;
+  min-height: 48px;
+  height: 48px;
+  background-color: $secondary-light-01-color;
+  border-radius: 10px;
+  @include flexible(center, flex-start);
+
+  &__input {
+    width: inherit;
+    height: inherit;
+    background-color: transparent;
+    padding-left: 20px;
+  }
+
+  &__icon {
+    position: absolute;
+    right: 20px;
+    @include flexible(center, center);
+  }
+
+  &__empty-icon {
+    position: absolute;
+    right: 20px;
+    height: 30px;
+    width: 30px;
+    background-color: $secondary-light-01-color;
+    z-index: $z-index-input;
+  }
+}
