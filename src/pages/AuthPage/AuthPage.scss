@@ -1,0 +1,37 @@
+.auth-page {
+  padding-top: 140px;
+
+  &__title {
+    padding-bottom: 16px;
+  }
+
+  &__description {
+    width: 100%;
+    @include flexible(center, center);
+    flex-direction: column;
+
+    &-titles {
+      width: inherit;
+      padding-bottom: 32px;
+      text-align: center;
+    }
+
+    &-icons {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__icon {
+    margin-right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid $secondary-light-01-color;
+    @include flexible(center, center);
+  }
+
+  &__icon:last-child {
+    margin-right: 0;
+  }
+}
