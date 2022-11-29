@@ -1,5 +1,5 @@
 .auth-page {
-  padding-top: 140px;
+  padding-top: 109px;
 
   &__title {
     padding-bottom: 16px;
@@ -7,8 +7,7 @@
 
   &__description {
     width: 100%;
-    @include flexible(center, center);
-    flex-direction: column;
+    @include flexible(center, center, column);
 
     &-titles {
       width: inherit;
@@ -23,11 +22,11 @@
   }
 
   &__icon {
-    margin-right: 20px;
     width: 48px;
     height: 48px;
-    border-radius: 50%;
+    margin-right: 20px;
     border: 1px solid $secondary-light-01-color;
+    border-radius: 50%;
     @include flexible(center, center);
   }
 

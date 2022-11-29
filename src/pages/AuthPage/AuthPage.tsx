@@ -23,7 +23,6 @@ function AuthPage() {
         <NumberField
           className="auth-page__phone-input"
           tel
-          minLength={11}
         />
         <Button className="auth-page__submit-button">Получить код</Button>
         <div className="auth-page__description">
