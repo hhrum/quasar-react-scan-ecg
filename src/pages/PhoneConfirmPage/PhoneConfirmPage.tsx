@@ -14,9 +14,14 @@ import './PhoneConfirmPage.scss'
 function PhoneConfirmPage() {
   const [time, setTime] = useState(15)
   const [isCounting, setIsCounting] = useState(true)
+  const getStringTime = (timeSeconds: number) => {
+    if (timeSeconds.toString().length === 1) {
+      return `0${timeSeconds.toString()}`
+    }
+    return timeSeconds.toString()
+  }
   const minutes = Math.floor(time / 60)
-  const seconds = Math.floor(time - minutes * 60)
-
+  const seconds = getStringTime(Math.floor(time - minutes * 60))
   useEffect(() => {
     const timeInterval = setInterval(() => {
       setTime((prevState) => (prevState >= 0 ? prevState - 1 : 0))
@@ -26,7 +31,6 @@ function PhoneConfirmPage() {
     }
     return () => clearInterval(timeInterval)
   }, [time])
-
   const getDefaultTime = () => {
     setIsCounting(true)
     setTime(15)
