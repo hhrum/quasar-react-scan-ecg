@@ -1,0 +1,71 @@
+.subscription-page {
+  padding-top: 63px;
+  padding-bottom: 0;
+
+  &__header {
+    &-text {
+      padding-right: 20px;
+    }
+  }
+
+  &__slide {
+    margin-bottom: 20px;
+    width: 100%;
+    @include flexible(center, center, column);
+
+    &-image {
+      margin-bottom: 24px;
+      width: 112px;
+      height: 112px;
+      background-color: $secondary-light-01-color;
+      border-radius: 15px;
+    }
+
+    &-title {
+      padding-bottom: 16px;
+    }
+
+    &-icon {
+      margin-right: 12px;
+    }
+  }
+
+  &__description-wrapper {
+    width: 200px;
+    @include flexible($jc: flex-center, $fd: column);
+  }
+
+  &__subtitle-wrapper {
+    padding-bottom: 6px;
+    @include flexible(center, center, row);
+  }
+
+  &__subtitle-wrapper:last-child {
+    padding-bottom: 0;
+  }
+
+  &__thumb-button {
+    padding: 0 20px;
+    height: 48px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: $secondary-light-01-color;
+    @include flexible(center, space-between);
+
+    &-text {
+      @include typography(16px, 400, 140%);
+    }
+  }
+
+  &__footer {
+    padding: 24px 20px;
+  }
+}
+
+.swiper-slide {
+  @include flexible(center, center, column);
+}
+
+.swiper-wrapper {
+  height: 313px;
+}
