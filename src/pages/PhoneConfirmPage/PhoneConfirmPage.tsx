@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 
+import Header from '@Components/HeaderComponents/Header'
+import HeaderButton from '@Components/HeaderComponents/HeaderButton'
+
 import Group from '@UIkit/Groups/Group'
-import Icon from '@UIkit/Icon'
 import NumberField from '@UIkit/Input/NumberField'
 import Typography from '@UIkit/Typography'
 
@@ -37,9 +39,14 @@ function PhoneConfirmPage() {
   }
   const header = useMemo(
     () => (
-      <div className="phone-confirm-page__header">
-        <Icon iconName="chevronLeft" />
-      </div>
+      <Header
+        leftSideSlot={
+          <HeaderButton
+            className="phone-confirm-page__header-button"
+            icon="chevronLeft"
+          />
+        }
+      />
     ),
     [],
   )

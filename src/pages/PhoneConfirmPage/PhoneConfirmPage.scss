@@ -1,8 +1,12 @@
 .phone-confirm-page {
-  padding-top: 57px;
+  padding-top: 53px;
 
   &__header {
     padding: 12px 20px 0;
+
+    &-button {
+      @include flexible(center, flex-start)
+    }
   }
 
   &__phone-title {
