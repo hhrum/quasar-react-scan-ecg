@@ -1,6 +1,8 @@
-.subscription-page {
-  padding-top: 63px;
-  padding-bottom: 0;
+.tariffs-page {
+  &__content {
+    padding-top: 63px;
+    padding-bottom: 0;
+  }
 
   &__header {
     &-text {
@@ -26,26 +28,23 @@
     }
 
     &-icon {
+      min-width: 24px;
+      max-width: 24px;
+      min-height: 24px;
+      max-height: 24px;
       margin-right: 12px;
-    }
-
-    &-subtitle {
-      width: 250px;
     }
   }
 
   &__description-wrapper {
-    width: 200px;
-    @include flexible($jc: flex-start, $fd: column);
-
-    &-last {
-      width: 260px;
-    }
+    padding: 0 60px;
+    @include flexible($ai: center, $jc: center, $fd: column);
   }
 
   &__subtitle-wrapper {
+    width: 100%;
     padding-bottom: 6px;
-    @include flexible(center, center, row);
+    @include flexible(center, flex-start, row);
   }
 
   &__subtitle-wrapper:last-child {
@@ -86,5 +85,5 @@
 }
 
 .swiper-wrapper {
-  height: 313px;
+  margin-bottom: 10px;
 }

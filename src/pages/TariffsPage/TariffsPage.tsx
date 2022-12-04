@@ -14,9 +14,9 @@ import colors from '@Assets/styles/colors'
 
 import PageLayout from '@Layouts/PageLayout'
 
-import './SubscriptionPage.scss'
+import './TariffsPage.scss'
 
-const subscriptions = [
+const tariffs = [
   {
     id: 1,
     title: 'Базовый тариф',
@@ -43,7 +43,7 @@ const subscriptions = [
   },
 ]
 
-function SubscriptionPage() {
+function TariffsPage() {
   const [swiper, setSwiper] = useState<SwiperCore>()
   const [buttonIndex, setButtonIndex] = useState(0)
   const header = useMemo(
@@ -57,7 +57,7 @@ function SubscriptionPage() {
         }
         rightSideSlot={
           <Typography
-            className="subscription-page__header-text"
+            className="tariffs-page__header-text"
             variant="text-t1"
             color={colors.secondaryDark02}
           >
@@ -79,72 +79,71 @@ function SubscriptionPage() {
     <PageLayout
       header={header}
       footer={footer}
-      contentClassName="subscription-page"
-      footerClassName="subscription-page__footer"
+      contentClassName="tariffs-page__content"
+      footerClassName="tariffs-page__footer"
     >
       <Group>
         <Swiper
-          className="subscription-page__slide"
+          className="tariffs-page__slide"
           modules={[Pagination]}
-          pagination={{ clickable: true }}
+          pagination={{ clickable: false }}
+          allowTouchMove={false}
           onSwiper={setSwiper}
         >
-          {subscriptions.map((elem) => (
+          {tariffs.map((elem) => (
             <SwiperSlide key={elem.id}>
-              <div className="subscription-page__slide-image" />
+              <div className="tariffs-page__slide-image" />
               <Typography
                 variant="heading-h2"
-                className="subscription-page__slide-title"
+                className="tariffs-page__slide-title"
               >
                 {elem.title}
               </Typography>
-              <div
-                className={`subscription-page__description-wrapper${elem.id === 3 ? '-last' : ''}`}
-              >
-                <div className="subscription-page__subtitle-wrapper">
+              <div className="tariffs-page__description-wrapper">
+                <div className="tariffs-page__subtitle-wrapper">
                   <Icon
                     iconName="check"
-                    className="subscription-page__slide-icon"
+                    className="tariffs-page__slide-icon"
                   />
                   <Typography
                     variant="text-t1"
-                    className="subscription-page__slide-subtitle"
+                    className="tariffs-page__slide-subtitle"
                   >
                     {elem.subTitle1}
                   </Typography>
                 </div>
-                <div className="subscription-page__subtitle-wrapper">
+                <div className="tariffs-page__subtitle-wrapper">
                   <Icon
                     iconName="check"
-                    className="subscription-page__slide-icon"
+                    className="tariffs-page__slide-icon"
                   />
                   <Typography
                     variant="text-t1"
-                    className="subscription-page__slide-subtitle"
+                    className="tariffs-page__slide-subtitle"
                   >
                     {elem.subTitle2}
                   </Typography>
                 </div>
-                <div className="subscription-page__subtitle-wrapper">
+                <div className="tariffs-page__subtitle-wrapper">
                   <Icon
                     iconName="check"
-                    className="subscription-page__slide-icon"
+                    className="tariffs-page__slide-icon"
                   />
                   <Typography
                     variant="text-t1"
-                    className="subscription-page__slide-subtitle"
+                    className="tariffs-page__slide-subtitle"
                   >
                     {elem.subTitle3}
                   </Typography>
                 </div>
-                <div className="subscription-page__subtitle-wrapper">
+                <div className="tariffs-page__subtitle-wrapper">
                   <Icon
                     iconName="check"
-                    className="subscription-page__slide-icon"
+                    className="tariffs-page__slide-icon"
                   />
                   <Typography
                     variant="text-t1"
-                    className="subscription-page__slide-subtitle"
+                    className="tariffs-page__slide-subtitle"
                   >
                     {elem.subTitle4}
                   </Typography>
@@ -155,10 +154,10 @@ function SubscriptionPage() {
         </Swiper>
         <button
           type="button"
-          className={`subscription-page__button${buttonIndex === 0 ? '-active' : ''}`}
+          className={`tariffs-page__button${buttonIndex === 0 ? '-active' : ''}`}
           onClick={() => handelSlideTo(0)}
         >
-          <div className="subscription-page__button-text">
+          <div className="tariffs-page__button-text">
             <span>
               <b>1 месяц: </b>
             </span>
@@ -168,10 +167,10 @@ function SubscriptionPage() {
         </button>
         <button
           type="button"
-          className={`subscription-page__button${buttonIndex === 1 ? '-active' : ''}`}
+          className={`tariffs-page__button${buttonIndex === 1 ? '-active' : ''}`}
           onClick={() => handelSlideTo(1)}
         >
-          <div className="subscription-page__button-text">
+          <div className="tariffs-page__button-text">
             <span>
               <b>1 месяц: </b>
             </span>
@@ -181,10 +180,10 @@ function SubscriptionPage() {
         </button>
         <button
           type="button"
-          className={`subscription-page__button${buttonIndex === 2 ? '-active' : ''}`}
+          className={`tariffs-page__button${buttonIndex === 2 ? '-active' : ''}`}
           onClick={() => handelSlideTo(2)}
         >
-          <div className="subscription-page__button-text">
+          <div className="tariffs-page__button-text">
             <span>
               <b>1 год: </b>
             </span>
@@ -197,4 +196,4 @@ function SubscriptionPage() {
   )
 }
 
-export default SubscriptionPage
+export default TariffsPage

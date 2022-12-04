@@ -4,7 +4,7 @@ import AuthPage from '@Pages/AuthPage'
 import DevPage from '@Pages/DevPage'
 import OnBoardingPage from '@Pages/OnBoardingPage'
 import PhoneConfirmPage from '@Pages/PhoneConfirmPage'
-import SubscriptionPage from '@Pages/SubscriptionPage'
+import TariffsPage from '@Pages/TariffsPage'
 
 const router = createBrowserRouter([
   {
@@ -24,8 +24,8 @@ const router = createBrowserRouter([
     element: <PhoneConfirmPage />,
   },
   {
-    path: '/subscription',
-    element: <SubscriptionPage />,
+    path: '/tariffs',
+    element: <TariffsPage />,
   },
 ])
 
