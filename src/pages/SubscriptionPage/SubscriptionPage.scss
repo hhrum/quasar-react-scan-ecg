@@ -9,14 +9,14 @@
   }
 
   &__slide {
-    margin-bottom: 20px;
     width: 100%;
+    margin-bottom: 20px;
     @include flexible(center, center, column);
 
     &-image {
-      margin-bottom: 24px;
       width: 112px;
       height: 112px;
+      margin-bottom: 24px;
       background-color: $secondary-light-01-color;
       border-radius: 15px;
     }
@@ -28,11 +28,19 @@
     &-icon {
       margin-right: 12px;
     }
+
+    &-subtitle {
+      width: 250px;
+    }
   }
 
   &__description-wrapper {
     width: 200px;
-    @include flexible($jc: flex-center, $fd: column);
+    @include flexible($jc: flex-start, $fd: column);
+
+    &-last {
+      width: 260px;
+    }
   }
 
   &__subtitle-wrapper {
@@ -44,16 +52,27 @@
     padding-bottom: 0;
   }
 
-  &__thumb-button {
-    padding: 0 20px;
-    height: 48px;
+  &__button {
     width: 100%;
-    border-radius: 10px;
+    height: 48px;
+    padding: 0 20px;
     background-color: $secondary-light-01-color;
+    border-radius: 10px;
     @include flexible(center, space-between);
 
     &-text {
       @include typography(16px, 400, 140%);
+    }
+
+    &-active {
+      @include flexible(center, space-between);
+
+      width: 100%;
+      height: 48px;
+      padding: 0 20px;
+      background-color: transparent;
+      border: 2px solid $primary-color;
+      border-radius: 10px;
     }
   }
 

@@ -1,5 +1,5 @@
-import { useMemo } from 'react'
-import { Pagination } from 'swiper'
+import { useMemo, useState } from 'react'
+import SwiperCore, { Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import Header from '@Components/HeaderComponents/Header'
@@ -44,6 +44,8 @@ const subscriptions = [
 ]
 
 function SubscriptionPage() {
+  const [swiper, setSwiper] = useState<SwiperCore>()
+  const [buttonIndex, setButtonIndex] = useState(0)
   const header = useMemo(
     () => (
       <Header
@@ -66,6 +68,12 @@ function SubscriptionPage() {
     ),
     [],
   )
+  const handelSlideTo = (index: number) => {
+    if (swiper) {
+      swiper.slideTo(index)
+    }
+    setButtonIndex(index)
+  }
   const footer = useMemo(() => <Button>Подписаться</Button>, [])
   return (
     <PageLayout
@@ -76,9 +84,10 @@ function SubscriptionPage() {
     >
       <Group>
         <Swiper
+          className="subscription-page__slide"
           modules={[Pagination]}
           pagination={{ clickable: true }}
-          className="subscription-page__slide"
+          onSwiper={setSwiper}
         >
           {subscriptions.map((elem) => (
             <SwiperSlide key={elem.id}>
@@ -89,7 +98,9 @@ function SubscriptionPage() {
               >
                 {elem.title}
               </Typography>
-              <div className="subscription-page__description-wrapper">
+              <div
+                className={`subscription-page__description-wrapper${elem.id === 3 ? '-last' : ''}`}
+              >
                 <div className="subscription-page__subtitle-wrapper">
                   <Icon
                     iconName="check"
@@ -144,39 +155,42 @@ function SubscriptionPage() {
         </Swiper>
         <button
           type="button"
-          className="subscription-page__thumb-button"
+          className={`subscription-page__button${buttonIndex === 0 ? '-active' : ''}`}
+          onClick={() => handelSlideTo(0)}
         >
-          <div className="subscription-page__thumb-button-text">
+          <div className="subscription-page__button-text">
             <span>
               <b>1 месяц: </b>
             </span>
             <span>200 ₽</span>
           </div>
-          <Icon iconName="subscribeCheck" />
+          {buttonIndex === 0 && <Icon iconName="subscribeCheck" />}
         </button>
         <button
           type="button"
-          className="subscription-page__thumb-button"
+          className={`subscription-page__button${buttonIndex === 1 ? '-active' : ''}`}
+          onClick={() => handelSlideTo(1)}
         >
-          <div className="subscription-page__thumb-button-text">
+          <div className="subscription-page__button-text">
             <span>
               <b>1 месяц: </b>
             </span>
             <span>350 ₽</span>
           </div>
-          <Icon iconName="subscribeCheck" />
+          {buttonIndex === 1 && <Icon iconName="subscribeCheck" />}
         </button>
         <button
           type="button"
-          className="subscription-page__thumb-button"
+          className={`subscription-page__button${buttonIndex === 2 ? '-active' : ''}`}
+          onClick={() => handelSlideTo(2)}
         >
-          <div className="subscription-page__thumb-button-text">
+          <div className="subscription-page__button-text">
             <span>
               <b>1 год: </b>
             </span>
             <span>5000 ₽</span>
           </div>
-          <Icon iconName="subscribeCheck" />
+          {buttonIndex === 2 && <Icon iconName="subscribeCheck" />}
         </button>
       </Group>
     </PageLayout>
