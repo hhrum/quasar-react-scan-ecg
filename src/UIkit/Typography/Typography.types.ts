@@ -4,6 +4,8 @@ type TypographyVariants =
   | 'heading-h1'
   | 'heading-h2'
   | 'heading-h3'
+  | 'text-t3'
+  | 'text-t3-bold'
   | 'text-t2'
   | 'text-t2-bold'
   | 'text-t1'

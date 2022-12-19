@@ -1,3 +1,10 @@
+@mixin text-t3 {
+  @include typography(14px, 400, 140%);
+}
+@mixin text-t3-bold {
+  @include typography(14px, 600, 140%);
+}
+
 @mixin text-t2 {
   @include typography(12px, 400, 140%);
 }
