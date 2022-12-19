@@ -13,15 +13,18 @@ import PageLayout from '@Layouts/PageLayout'
 
 import './PhoneConfirmPage.scss'
 
-function PhoneConfirmPage() {
-  const [time, setTime] = useState(15)
-  const [isCounting, setIsCounting] = useState(true)
-  const getStringTime = (timeSeconds: number) => {
-    if (timeSeconds.toString().length === 1) {
-      return `0${timeSeconds.toString()}`
-    }
-    return timeSeconds.toString()
+const getStringTime = (timeSeconds: number) => {
+  if (timeSeconds.toString().length === 1) {
+    return `0${timeSeconds.toString()}`
   }
+  return timeSeconds.toString()
+}
+
+const defaultTime = 15
+
+function PhoneConfirmPage() {
+  const [time, setTime] = useState(defaultTime)
+  const [isCounting, setIsCounting] = useState(true)
   const minutes = Math.floor(time / 60)
   const seconds = getStringTime(Math.floor(time - minutes * 60))
   useEffect(() => {
@@ -35,7 +38,7 @@ function PhoneConfirmPage() {
   }, [time])
   const getDefaultTime = () => {
     setIsCounting(true)
-    setTime(15)
+    setTime(defaultTime)
   }
   const header = useMemo(
     () => (

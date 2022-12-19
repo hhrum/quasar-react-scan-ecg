@@ -1,0 +1,89 @@
+.tariffs-page {
+  &__content {
+    padding-top: 63px;
+    padding-bottom: 0;
+  }
+
+  &__header {
+    &-text {
+      padding-right: 20px;
+    }
+  }
+
+  &__slide {
+    width: 100%;
+    margin-bottom: 20px;
+    @include flexible(center, center, column);
+
+    &-image {
+      width: 112px;
+      height: 112px;
+      margin-bottom: 24px;
+      background-color: $secondary-light-01-color;
+      border-radius: 15px;
+    }
+
+    &-title {
+      padding-bottom: 16px;
+    }
+
+    &-icon {
+      min-width: 24px;
+      max-width: 24px;
+      min-height: 24px;
+      max-height: 24px;
+      margin-right: 12px;
+    }
+  }
+
+  &__description-wrapper {
+    padding: 0 60px;
+    @include flexible($ai: center, $jc: center, $fd: column);
+  }
+
+  &__subtitle-wrapper {
+    width: 100%;
+    padding-bottom: 6px;
+    @include flexible(center, flex-start, row);
+  }
+
+  &__subtitle-wrapper:last-child {
+    padding-bottom: 0;
+  }
+
+  &__button {
+    width: 100%;
+    height: 48px;
+    padding: 0 20px;
+    background-color: $secondary-light-01-color;
+    border-radius: 10px;
+    @include flexible(center, space-between);
+
+    &-text {
+      @include typography(16px, 400, 140%);
+    }
+
+    &--active {
+      @include flexible(center, space-between);
+
+      width: 100%;
+      height: 48px;
+      padding: 0 20px;
+      background-color: transparent;
+      border: 2px solid $primary-color;
+      border-radius: 10px;
+    }
+  }
+
+  &__footer {
+    padding: 24px 20px;
+  }
+}
+
+.swiper-slide {
+  @include flexible(center, center, column);
+}
+
+.swiper-wrapper {
+  margin-bottom: 10px;
+}

@@ -10,7 +10,6 @@ import './NumberField.scss'
 import NumberFieldProps from './NumberField.types'
 
 function NumberField({ className, tel, minLength, maxLength }: NumberFieldProps) {
-  const InputFieldClassName = classnames('number-field', className)
   const {
     register,
     formState: { errors },
@@ -29,6 +28,7 @@ function NumberField({ className, tel, minLength, maxLength }: NumberFieldProps)
       setValue('Numbers', '+7')
     }
   }
+  const InputFieldClassName = classnames('number-field', className)
   if (tel) {
     return (
       <div className={InputFieldClassName}>
