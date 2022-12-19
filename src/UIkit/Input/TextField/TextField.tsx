@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import { SetStateAction, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 
 import Typography from '@UIkit/Typography'
 
@@ -18,7 +18,7 @@ function TextField({ className, placeholder, value, setValue }: TextFieldProps) 
   if (value && !placeholderOnTop) {
     setPlaceholderOnTop((prevState) => !prevState)
   }
-  const changeHandler = (event: { target: { value: SetStateAction<string> } }) => {
+  const changeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     if (setValue) {
       setValue(event.target.value)
     }
