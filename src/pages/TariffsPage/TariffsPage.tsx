@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import SwiperCore, { Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -20,26 +20,17 @@ const tariffs = [
   {
     id: 1,
     title: 'Базовый тариф',
-    subTitle1: '2 расшифровки ЭКГ',
-    subTitle2: 'Изучение теории',
-    subTitle3: 'Решение тестов',
-    subTitle4: 'Тренажёр',
+    advantages: ['2 расшифровки ЭКГ', 'Изучение теории', 'Решение тестов', 'Тренажёр'],
   },
   {
     id: 2,
     title: 'Оптимальный тариф',
-    subTitle1: '5 расшифровок ЭКГ',
-    subTitle2: 'Изучение теории',
-    subTitle3: 'Решение тестов',
-    subTitle4: 'Тренажёр',
+    advantages: ['5 расшифровки ЭКГ', 'Изучение теории', 'Решение тестов', 'Тренажёр'],
   },
   {
     id: 3,
     title: 'Тариф для ЛПУ',
-    subTitle1: 'Безлимитные расшифровки',
-    subTitle2: 'Изучение теории',
-    subTitle3: 'Решение тестов',
-    subTitle4: 'Тренажёр',
+    advantages: ['Безлимитные расшифровки', 'Изучение теории', 'Решение тестов', 'Тренажёр'],
   },
 ]
 
@@ -68,13 +59,34 @@ function TariffsPage() {
     ),
     [],
   )
-  const handelSlideTo = (index: number) => {
-    if (swiper) {
-      swiper.slideTo(index)
-    }
-    setButtonIndex(index)
-  }
   const footer = useMemo(() => <Button>Подписаться</Button>, [])
+  const handelSlideTo = useCallback(
+    (index: number) => {
+      if (swiper) {
+        swiper.slideTo(index)
+      }
+      setButtonIndex(index)
+    },
+    [swiper],
+  )
+  const generateSwiperButton = useCallback(
+    (index: number, durationText: string, price: number) => (
+      <button
+        type="button"
+        className={`tariffs-page__button${buttonIndex === index ? '--active' : ''}`}
+        onClick={() => handelSlideTo(index)}
+      >
+        <div className="tariffs-page__button-text">
+          <span>
+            <b>{durationText}</b>
+          </span>
+          <span>{price} ₽</span>
+        </div>
+        {buttonIndex === index && <Icon iconName="subscribeCheck" />}
+      </button>
+    ),
+    [buttonIndex, handelSlideTo],
+  )
   return (
     <PageLayout
       header={header}
@@ -100,97 +112,31 @@ function TariffsPage() {
                 {elem.title}
               </Typography>
               <div className="tariffs-page__description-wrapper">
-                <div className="tariffs-page__subtitle-wrapper">
-                  <Icon
-                    iconName="check"
-                    className="tariffs-page__slide-icon"
-                  />
-                  <Typography
-                    variant="text-t1"
-                    className="tariffs-page__slide-subtitle"
+                {elem.advantages.map((advantage, index) => (
+                  <div
+                    /* eslint-disable-next-line react/no-array-index-key */
+                    key={index}
+                    className="tariffs-page__subtitle-wrapper"
                   >
-                    {elem.subTitle1}
-                  </Typography>
-                </div>
-                <div className="tariffs-page__subtitle-wrapper">
-                  <Icon
-                    iconName="check"
-                    className="tariffs-page__slide-icon"
-                  />
-                  <Typography
-                    variant="text-t1"
-                    className="tariffs-page__slide-subtitle"
-                  >
-                    {elem.subTitle2}
-                  </Typography>
-                </div>
-                <div className="tariffs-page__subtitle-wrapper">
-                  <Icon
-                    iconName="check"
-                    className="tariffs-page__slide-icon"
-                  />
-                  <Typography
-                    variant="text-t1"
-                    className="tariffs-page__slide-subtitle"
-                  >
-                    {elem.subTitle3}
-                  </Typography>
-                </div>
-                <div className="tariffs-page__subtitle-wrapper">
-                  <Icon
-                    iconName="check"
-                    className="tariffs-page__slide-icon"
-                  />
-                  <Typography
-                    variant="text-t1"
-                    className="tariffs-page__slide-subtitle"
-                  >
-                    {elem.subTitle4}
-                  </Typography>
-                </div>
+                    <Icon
+                      iconName="check"
+                      className="tariffs-page__slide-icon"
+                    />
+                    <Typography
+                      variant="text-t1"
+                      className="tariffs-page__slide-subtitle"
+                    >
+                      {advantage}
+                    </Typography>
+                  </div>
+                ))}
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
-        <button
-          type="button"
-          className={`tariffs-page__button${buttonIndex === 0 ? '-active' : ''}`}
-          onClick={() => handelSlideTo(0)}
-        >
-          <div className="tariffs-page__button-text">
-            <span>
-              <b>1 месяц: </b>
-            </span>
-            <span>200 ₽</span>
-          </div>
-          {buttonIndex === 0 && <Icon iconName="subscribeCheck" />}
-        </button>
-        <button
-          type="button"
-          className={`tariffs-page__button${buttonIndex === 1 ? '-active' : ''}`}
-          onClick={() => handelSlideTo(1)}
-        >
-          <div className="tariffs-page__button-text">
-            <span>
-              <b>1 месяц: </b>
-            </span>
-            <span>350 ₽</span>
-          </div>
-          {buttonIndex === 1 && <Icon iconName="subscribeCheck" />}
-        </button>
-        <button
-          type="button"
-          className={`tariffs-page__button${buttonIndex === 2 ? '-active' : ''}`}
-          onClick={() => handelSlideTo(2)}
-        >
-          <div className="tariffs-page__button-text">
-            <span>
-              <b>1 год: </b>
-            </span>
-            <span>5000 ₽</span>
-          </div>
-          {buttonIndex === 2 && <Icon iconName="subscribeCheck" />}
-        </button>
+        {generateSwiperButton(0, '1 месяц: ', 200)}
+        {generateSwiperButton(1, '1 месяц: ', 350)}
+        {generateSwiperButton(2, '1 год: ', 5000)}
       </Group>
     </PageLayout>
   )

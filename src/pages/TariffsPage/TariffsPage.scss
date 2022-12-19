@@ -63,7 +63,7 @@
       @include typography(16px, 400, 140%);
     }
 
-    &-active {
+    &--active {
       @include flexible(center, space-between);
 
       width: 100%;
